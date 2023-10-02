@@ -93,21 +93,9 @@ bool itc_mirror_num(long long number){
 
 int itc_mirror_count(long long number){
     int n = 0;
-    if(number < 0){
-        for (int i = 1; i >= number; i--){
-            if(i*(-1) == itc_reverse_number(i)){
-                ++n;
-            }
-        }
-    return n + 1;
-    }
-    else if (number == 0){
-        return 2;
-    }
-    else{
-        for (int i = 1; i <= number; i++){
-            if(i == itc_reverse_number(i)){
-                ++n;
+    for (int i = 1; i <= number; i++){
+        if(i == itc_reverse_number(i)){
+            ++n;
             }
         }
     return n;
