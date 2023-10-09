@@ -1,8 +1,6 @@
 #include <iostream>
 #include "middle.h"
 using namespace std;
-
-
 int itc_min_num(long long number){
     int min1;
     min1 = 9;
@@ -79,11 +77,8 @@ bool itc_mirror_num(long long number){
         rev = rev * 10 + digit;
         number /= 10;
     }
-    if (originalnumber == rev){
+    if (originalnumber == rev || originalnumber == 0){
         cout << "TRUE" << endl;
-    }
-    else if(number == 0){
-        cout << "TRUE";
     }
     else{
         cout << "FALSE" << endl;
@@ -96,8 +91,7 @@ int itc_mirror_count(long long number){
     for (int i = 1; i <= number; i++){
         if(i == itc_reverse_number(i)){
             ++n;
-            }
         }
+    }
     return n;
-}
 }

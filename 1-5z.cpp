@@ -4,7 +4,7 @@ using namespace std;
 
 
 void itc_num_print(int number){
-    cout << number << endl;
+    cout << number;
 }
 
 
