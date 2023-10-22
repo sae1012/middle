@@ -18,6 +18,9 @@ int itc_len_num(long long number){
         }
     return sum;
     }
+    if (number == 0){
+        return 0;
+    }
     while(number > 0){
         sum += 1;
         number /= 10;
