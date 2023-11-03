@@ -3,10 +3,25 @@
 using namespace std;
 int itc_second_max_num(long long number){
     int max1 = -1, max2 = -1;
-    if (number < 10) {
+    if (number < 0){
+        number = number * (-1);
+        while (number) {
+        int digit;
+        digit = number % 10;
+        if (digit > max1){
+            max2 = max1;
+            max1 = digit;
+        }
+        else if (digit > max2 && digit < max1){
+            max2 = digit;
+        }
+    number /= 10;
+        }
+    }
+    if (number < 10 && number < -10) {
         return -1;
     }
-    while (number > 0) {
+    while (number) {
         int digit;
         digit = number % 10;
         if (digit > max1){
@@ -24,10 +39,24 @@ return max2;
 
 int itc_second_simple_max_num(long long number){
     int max1 = -1, max2 = -1;
-    if(number < 10) {
+    if(number < 0){
+        number = number * (-1);
+        while (number > 0) {
+        int digit;
+        digit = number % 10;
+        if(digit > max1){
+            max2 = max1;
+            max1 = digit;
+        }
+        else if(digit > max2 && digit < max1){
+            max2 = digit;
+        }
+        number /= 10;
+        }
+    }
+    if (number < 10 && number < -10){
         return -1;
     }
-
     while (number > 0) {
         int digit;
         digit = number % 10;
