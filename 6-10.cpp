@@ -30,8 +30,11 @@ int itc_min_num(long long number){
 
 
 int itc_rev_num(long long number){
-    int digit, rebmun, sum = 0;
-    rebmun = 0;
+    int digit, sum = 0;
+    long long rebmun = 0;
+    if(number == 0){
+        return 1;
+    }
     if(number < 0){
         number = number * (-1);
         while(number){
